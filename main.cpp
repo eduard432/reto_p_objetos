@@ -1,11 +1,35 @@
+/*
+ Mariana Ponce A01668399
+ Eduardo Barron Cisneros A01669505
+ 22/11/2024
+*/
 
 #include <iostream>
 #include <string>
+#include <Cliente.h>
 
 using namespace std;
 
 void print(string text) {
     cout << text << endl;
+}
+
+
+
+
+void crearCuenta () {
+    string contrasenia, correo;
+    print("----------------------------");
+    print("Introduce tu correo:");
+    cin >> correo;
+    print("----------------------------");
+    print("Introduce tu contraseña:");
+    cin >> contrasenia;
+
+    Cliente cliente = Cliente(correo, contrasenia);
+    
+
+    return 
 }
 
 
@@ -27,7 +51,7 @@ int main() {
         operacion = menu();
 
         if (operacion == 1){            
-            
+            crearCuenta();
         }
     } while (operacion != 0);
 
