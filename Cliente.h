@@ -1,30 +1,41 @@
 /*
- Mariana Ponce A01668399
- Eduardo Barron Cisneros A01669505
- 22/11/2024
+    Mariana Ponce A01668399
+    Eduardo Barron Cisneros A01669505
+    22/11/2024
 */
+
 #include <string>
-#include <Boleto.h>
 using namespace std;
 
 #ifndef CLIENTE_H
 #define CLIENTE_H
 
-class Cliente {
+#include "Boleto.h"
+
+    class Cliente {
     private:
-        string correo, contrasenia;
-        Boleto boletos[];
+        string nombre;
+        string correo;
+        string contrasenia;
+        static const int MAX_BOLETOS = 20;
+        Boleto boletosComprados[MAX_BOLETOS];
+        int numBoletos;
+
     public:
         Cliente();
-        Cliente(string correo, string contrasenia);
+        Cliente(string nombre, string correo, string contrasenia);
         ~Cliente();
+
+        string getNombre();
         string getCorreo();
         string getContrasenia();
-        Boleto getBoletos();
+        void setNombre(string nombre);
         void setCorreo(string correo);
         void setContrasenia(string contrasenia);
-        void setBoletos(Boleto boletos[]);
         bool iniciarSesion(string correo, string contrasenia);
+        bool verificarRegistro(Cliente clientes[], int numClientes);
+        bool agregarBoleto(Boleto boleto);
+        void mostrarBoletosComprados();
 };
 
 #endif //CLIENTE_H

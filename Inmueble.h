@@ -1,11 +1,10 @@
 /*
- Mariana Ponce A01668399
- Eduardo Barron Cisneros A01669505
- 22/11/2024
+    Mariana Ponce A01668399
+    Eduardo Barron Cisneros A01669505
+    22/11/2024
 */
+
 #include <string>
-#include <ctime>
-#include <Asiento.h>
 using namespace std;
 
 #ifndef INMUEBLE_H
@@ -13,19 +12,17 @@ using namespace std;
 
 class Inmueble {
     private:
-        int capacidad;
         string direccion;
-        Asiento asientos[];
+        int capacidad;
+
     public:
         Inmueble();
-        Inmueble(int capacidad, string direccion, Asiento asientos[]);
+        Inmueble(string direccion, int capacidad);
         ~Inmueble();
-        int getCapacidad();
         string getDireccion();
-        Asiento getAsientos();
-        void setCapacidad(int capacidad);
+        int getCapacidad();
         void setDireccion(string direccion);
-        void setAsientos();
+        void setCapacidad(int capacidad);
 };
 
 #endif //INMUEBLE_H

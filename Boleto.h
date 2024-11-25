@@ -1,32 +1,32 @@
 /*
- Mariana Ponce A01668399
- Eduardo Barron Cisneros A01669505
- 22/11/2024
+    Mariana Ponce A01668399
+    Eduardo Barron Cisneros A01669505
+    22/11/2024
 */
+
 #include <string>
-#include <ctime>
 using namespace std;
+
+#include "Concierto.h"
 
 #ifndef BOLETO_H
 #define BOLETO_H
-#include "Evento.h"
-#include "Asiento.h"
-using namespace std;
 
 class Boleto {
     private:
-        int costo;
-        string fechaCompra;
-        Evento evento;
-        Asiento asiento;
+        string codigoAcceso;
+        Concierto concierto;
+
     public:
         Boleto();
-        Boleto(int costo, string fechaCompra);
+        Boleto(Concierto concierto);
         ~Boleto();
-        string getFila();
-        string getColumna();
-        void setFila(string fila);
-        void setColumna(string columna);
-};
+        string getCodigoAcceso();
+        Concierto getConcierto();
+        void setcodigoAcceso(string codigoAcceso);
+        void setConcierto(Concierto concierto);
+        //string generarCodigo();
+    };
+
 
 #endif //BOLETO_H
