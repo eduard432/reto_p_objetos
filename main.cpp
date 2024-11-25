@@ -73,6 +73,8 @@ void menuCliente(Cliente cliente) {
                 cout << "------------------------------" << endl;
                 cout << "Has seleccionado el concierto: " << endl;
                 concierto[opcionConcierto - 1].mostrarConcierto();
+                Boleto boleto = Boleto(concierto[opcionConcierto - 1]);
+                cliente.agregarBoleto(boleto);
             } else {
                 cout << "------------------------------" << endl;
                 cout << "Opcion no valida" << endl;
@@ -81,6 +83,7 @@ void menuCliente(Cliente cliente) {
         } else if(opcionCliente == 2) {
             cout << "------------------------------" << endl;
             cliente.mostrarBoletosComprados();
+
         } else if(opcionCliente == 3) {
             salir = true;
         } else {
@@ -90,7 +93,7 @@ void menuCliente(Cliente cliente) {
     }
 }
 
-Cliente menuSesiones() {
+Cliente menuSesion() {
     int opcionSesion;
     bool inicioSesion = false;
     string nombre, correo, contrasenia;
@@ -148,6 +151,7 @@ Cliente menuSesiones() {
 }
 
 int main() {
-    menuCliente(menuSesiones());
+    Cliente cliente = menuSesion();
+    menuCliente(cliente);
     return 0;
 }
