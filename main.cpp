@@ -23,7 +23,7 @@ Inmueble inmueble6("Palacio de los Deportes", 30);
 
 // Dummies de conciertos
 const int MAX_CONCIERTOS = 5;
-Concierto concierto[MAX_CONCIERTOS] = {
+Concierto conciertos[MAX_CONCIERTOS] = {
     Concierto("Guts Tour", "Olivia Rodrigo", "Pop/Rock", "02/04/2025", "19:00", inmueble2),
     Concierto("Las mujeres ya no lloran", "Shakira", "Pop", "21/03/2025", "23:00", inmueble5),
     Concierto("Coca Cola Flow Fest", "Varios", "Varios", "19/06/2025", "13:00", inmueble3),
@@ -63,17 +63,23 @@ void menuCliente(Cliente cliente) {
             cout << "Lista de conciertos disponibles:" << endl;
             for (int i = 0; i < MAX_CONCIERTOS; i++) {
                 cout << i + 1 << ". " <<endl;
-                concierto[i].mostrarConcierto();
+                conciertos[i].mostrarConcierto();
             }
             cout << "------------------------------" << endl;
             cout << "Seleccione el numero del concierto que desea comprar boletos:  ";
             cin >> opcionConcierto;
 
-            if (opcionConcierto >= 1 && opcionConcierto <= MAX_CONCIERTOS) {
+            int cantidad;
+            cout << "------------------------------" << endl;
+            cout << "Selecciona la cantidad de boletos: ";
+            cin >> cantidad;
+
+            if (opcionConcierto >= 1 && opcionConcierto <= MAX_CONCIERTOS && cantidad>=1) {
                 cout << "------------------------------" << endl;
                 cout << "Has seleccionado el concierto: " << endl;
-                concierto[opcionConcierto - 1].mostrarConcierto();
-                Boleto boleto = Boleto(concierto[opcionConcierto - 1]);
+                Concierto conciertoSelec = conciertos[opcionConcierto - 1];
+                Boleto boleto = Boleto(conciertoSelec, cantidad);
+                boleto.mostrarBoleto();
                 cliente.agregarBoleto(boleto);
             } else {
                 cout << "------------------------------" << endl;

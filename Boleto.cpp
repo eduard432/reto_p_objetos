@@ -5,18 +5,25 @@
 */
 # include <random>
 #include "Boleto.h"
+#include <iostream>
+using namespace std;
 
 Boleto::Boleto() {}
 
-Boleto::Boleto(Concierto concierto) {
-    this->codigoAcceso = rand();
+Boleto::Boleto(Concierto concierto, int cantidad) {
+    this->codigoAcceso = to_string(rand());
     this->concierto = concierto;
+    this->cantidad = cantidad;
 }
 
 Boleto::~Boleto() {}
 
 string Boleto::getCodigoAcceso() {
     return this->codigoAcceso;
+}
+
+int Boleto::getCantidad() {
+    return this->cantidad;
 }
 
 Concierto Boleto::getConcierto()
@@ -27,4 +34,11 @@ Concierto Boleto::getConcierto()
 void Boleto::setConcierto(Concierto concierto)
 {
     this->concierto = concierto;
+}
+
+void Boleto::mostrarBoleto() {
+    cout << "Código de acceso: " << codigoAcceso << endl;
+    cout << "Cantidad de boletos: " << cantidad << endl;
+    concierto.mostrarConcierto();
+
 }

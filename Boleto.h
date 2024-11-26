@@ -16,15 +16,18 @@ class Boleto {
     private:
         string codigoAcceso;
         Concierto concierto;
+        int cantidad;
 
     public:
         Boleto();
-        Boleto(Concierto concierto);
+        Boleto(Concierto concierto, int cantidad);
         ~Boleto();
         string getCodigoAcceso();
         Concierto getConcierto();
+        int getCantidad();
         void setcodigoAcceso(string codigoAcceso);
         void setConcierto(Concierto concierto);
+        void mostrarBoleto();
         //string generarCodigo();
     };
 

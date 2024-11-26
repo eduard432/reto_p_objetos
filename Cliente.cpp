@@ -76,7 +76,7 @@ void Cliente::mostrarBoletosComprados() {
     }
     cout << "Tus boletos comprados son:" << endl;
     for (int i = 0; i < numBoletos; i++) {
-        cout << "Código de acceso: " << boletosComprados[i].getCodigoAcceso() << endl;
-        boletosComprados[i].getConcierto().mostrarConcierto();
+        boletosComprados[i].mostrarBoleto();
+        cout << "------------------------------" << endl;
     }
 }
