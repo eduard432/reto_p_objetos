@@ -39,6 +39,14 @@ void Boleto::setConcierto(Concierto concierto)
 void Boleto::mostrarBoleto() {
     cout << "Código de acceso: " << codigoAcceso << endl;
     cout << "Cantidad de boletos: " << cantidad << endl;
-    concierto.mostrarConcierto();
+
+    cout << "Concierto: " << concierto.getNombre() << endl;
+    cout << "Artista: " << concierto.getArtista() << endl;
+    cout << "Genero: " << concierto.getGenero() << endl;
+    cout << "Fecha: " << concierto.getFecha() << endl;
+    cout << "Hora: " << concierto.getHora() << endl;
+    cout << "Lugar: " << concierto.getLugar().getDireccion() << endl;
 
 }
+
+

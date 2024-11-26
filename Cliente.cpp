@@ -62,13 +62,25 @@ bool Cliente::verificarRegistro(Cliente clientes[], int numClientes) {
 }
 
 bool Cliente::agregarBoleto(Boleto boletoRecienComprado) {
+    Concierto concierto = boletoRecienComprado.getConcierto();
+    int cantidadConcierto = concierto.getLimiteCompra();
+    int cantidad = boletoRecienComprado.getCantidad();
     if (numBoletos < MAX_BOLETOS) {
-        boletosComprados[numBoletos] = boletoRecienComprado;
-        numBoletos++;
-        return true;
+        if(cantidad <= cantidadConcierto) {
+            boletosComprados[numBoletos] = boletoRecienComprado;
+            numBoletos++;
+            return true;
+        } else {
+            cout << "No puedes comprar " << cantidad << ". El limite es: " << cantidadConcierto << endl;
+            return false;
+        }
+    } else {
+        cout << "Cantidad máxima de boletos por usuario" << endl;
+        return false;
     }
     return false;
 }
+
 void Cliente::mostrarBoletosComprados() {
     if (numBoletos == 0) {
         cout << "No has comprado boletos." << endl;

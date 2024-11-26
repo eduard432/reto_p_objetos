@@ -24,11 +24,11 @@ Inmueble inmueble6("Palacio de los Deportes", 30);
 // Dummies de conciertos
 const int MAX_CONCIERTOS = 5;
 Concierto conciertos[MAX_CONCIERTOS] = {
-    Concierto("Guts Tour", "Olivia Rodrigo", "Pop/Rock", "02/04/2025", "19:00", inmueble2),
-    Concierto("Las mujeres ya no lloran", "Shakira", "Pop", "21/03/2025", "23:00", inmueble5),
-    Concierto("Coca Cola Flow Fest", "Varios", "Varios", "19/06/2025", "13:00", inmueble3),
-    Concierto("The Clancy Tour", "Twenty One Pilots", "Rock Alternativo", "10/11/2025", "20:00", inmueble1),
-    Concierto("Domin Tour", "Stray Kids", "K-Pop", "04/03/2025", "21:00", inmueble2),
+    Concierto("Guts Tour", "Olivia Rodrigo", "Pop/Rock", "02/04/2025", "19:00", inmueble2, 6),
+    Concierto("Las mujeres ya no lloran", "Shakira", "Pop", "21/03/2025", "23:00", inmueble5, 8),
+    Concierto("Coca Cola Flow Fest", "Varios", "Varios", "19/06/2025", "13:00", inmueble3, 10),
+    Concierto("The Clancy Tour", "Twenty One Pilots", "Rock Alternativo", "10/11/2025", "20:00", inmueble1, 6),
+    Concierto("Domin Tour", "Stray Kids", "K-Pop", "04/03/2025", "21:00", inmueble2, 5),
 };
 
 // Dummies de clientes

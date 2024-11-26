@@ -9,13 +9,14 @@
 
 Concierto::Concierto() {}
 
-Concierto::Concierto(string nombre, string artista, string genero, string fecha, string hora, Inmueble lugar) {
+Concierto::Concierto(string nombre, string artista, string genero, string fecha, string hora, Inmueble lugar,int limiteCompra) {
     this->nombre = nombre;
     this->artista = artista;
     this->genero = genero;
     this->fecha = fecha;
     this->hora = hora;
     this->lugar = lugar;
+    this->limiteCompra = limiteCompra;
 }
 
 Concierto::~Concierto() {}
@@ -42,6 +43,10 @@ string Concierto::getHora() {
 
 Inmueble Concierto::getLugar() {
     return lugar;
+}
+
+int Concierto::getLimiteCompra() {
+    return limiteCompra;
 }
 
 void Concierto::setNombre(string nombre) {
@@ -75,5 +80,6 @@ void Concierto::mostrarConcierto() {
     cout << "Fecha: " << fecha << endl;
     cout << "Hora: " << hora << endl;
     cout << "Lugar: " << lugar.getDireccion() << endl;
+    cout << "Cantidad Máxima: " << limiteCompra << endl;
 }
 

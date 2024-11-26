@@ -19,10 +19,11 @@ class Concierto {
         string fecha;
         string hora;
         Inmueble lugar;
+        int limiteCompra;
 
     public:
         Concierto();
-        Concierto(string nombre, string artista, string genero, string fecha, string hora, Inmueble lugar);
+        Concierto(string nombre, string artista, string genero, string fecha, string hora, Inmueble lugar, int limiteCompra);
         ~Concierto();
         string getNombre();
         string getArtista();
@@ -30,6 +31,7 @@ class Concierto {
         string getFecha();
         string getHora();
         Inmueble getLugar();
+        int getLimiteCompra();
         void setNombre(string nombre);
         void setArtista(string artista);
         void setGenero(string genero);
